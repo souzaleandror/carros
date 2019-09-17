@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class AppText extends StatelessWidget {
@@ -38,6 +39,9 @@ class AppText extends StatelessWidget {
         fontSize: 16,
       ),
       decoration: InputDecoration(
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
         labelText: text,
         hintText: hintText,
         labelStyle: TextStyle(

@@ -3108,6 +3108,8 @@ SOFTWARE.
 
 --------------------------------------------------------------------------------
 charcode
+http
+http_parser
 matcher
 path
 source_span
