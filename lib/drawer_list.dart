@@ -1,4 +1,5 @@
 import 'package:carros/pages/login/login_page.dart';
+import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:flutter/material.dart';
 
@@ -15,14 +16,34 @@ class DrawerList extends StatelessWidget {
 //    );
 //  }
 
+  UserAccountsDrawerHeader _header(Usuario user) {
+    return UserAccountsDrawerHeader(
+      accountEmail: Text(user.nome),
+      accountName: Text(user.email),
+      currentAccountPicture: CircleAvatar(
+        backgroundImage: NetworkImage(user.urlFoto),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    Future<Usuario> future = Usuario.get();
+
 //    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
 
     return SafeArea(
       child: Drawer(
         child: ListView(
           children: <Widget>[
+            FutureBuilder<Usuario>(
+              future: future,
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                Usuario user = snapshot.data;
+
+                return user != null ? _header(user) : Container();
+              },
+            ),
 //            FutureBuilder<FirebaseUser>(
 //              future: future,
 //              builder: (context, snapshot) {
@@ -64,7 +85,7 @@ class DrawerList extends StatelessWidget {
   }
 
   _onClickLogout(BuildContext context) {
-    //Usuario.clear();
+    Usuario.clear();
     //FirebaseService().logout();
     Navigator.pop(context);
     push(context, LoginPage(), replace: true);

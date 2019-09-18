@@ -1,5 +1,7 @@
 import 'package:carros/pages/carro/carro.dart';
+import 'package:carros/pages/carro/carro_page.dart';
 import 'package:carros/pages/carro/carros_api.dart';
+import 'package:carros/utils/navigator.dart';
 import 'package:flutter/material.dart';
 
 class CarrosListView extends StatefulWidget {
@@ -12,14 +14,33 @@ class CarrosListView extends StatefulWidget {
 
 class _CarrosListViewState extends State<CarrosListView>
     with AutomaticKeepAliveClientMixin<CarrosListView> {
+  List<Carro> carros;
+
+  @override
+  void initState() {
+    _loadData();
+//    Future<List<Carro>> future = CarrosApi.getCarros(widget.tipo);
+//
+//    future.then((List<Carro> carros) {
+//      setState(() {
+//        this.carros = carros;
+//      });
+//    });
+  }
+
+  _loadData() async {
+    List<Carro> carros = await CarrosApi.getCarros(widget.tipo);
+
+    setState(() {
+      this.carros = carros;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return _body();
-  }
-
-  _body() {
-    Future<List<Carro>> future = CarrosApi.getCarros(widget.tipo);
+    print("CarrosListView build ${widget.tipo}");
+    //Future<List<Carro>> future = CarrosApi.getCarros(widget.tipo);
 
     //return _listView(carros);
 //
@@ -34,31 +55,36 @@ class _CarrosListViewState extends State<CarrosListView>
 //      ),
 //    );
 
-    return FutureBuilder(
-      future: future,
-      initialData: [],
-      builder: (context, snapshot) {
-        if (!snapshot.hasData) {
-          return Center(
-            child: CircularProgressIndicator(),
-          );
-        }
-        if (snapshot.hasError) {
-          print(snapshot.hasError);
-          return Center(
-              child: Text(
-            "Nao foi possivel buscar os carros",
-            style: TextStyle(
-              color: Colors.red,
-              fontSize: 22,
-            ),
-          ));
-        }
-
-        List<Carro> carros = snapshot.data;
-        return _listView(carros);
-      },
-    );
+//    return FutureBuilder(
+//      future: future,
+//      builder: (context, snapshot) {
+//        if (!snapshot.hasData) {
+//          return Center(
+//            child: CircularProgressIndicator(),
+//          );
+//        }
+//        if (snapshot.hasError) {
+//          print(snapshot.hasError);
+//          return Center(
+//              child: Text(
+//            "Nao foi possivel buscar os carros",
+//            style: TextStyle(
+//              color: Colors.red,
+//              fontSize: 22,
+//            ),
+//          ));
+//        }
+//
+//        List<Carro> carros = snapshot.data;
+//        return _listView(carros);
+//      },
+//    );
+    if (carros == null) {
+      return Center(
+        child: CircularProgressIndicator(),
+      );
+    }
+    return _listView(carros);
   }
 
   Container _listView(List<Carro> carros) {
@@ -98,7 +124,7 @@ class _CarrosListViewState extends State<CarrosListView>
                       children: <Widget>[
                         FlatButton(
                           child: Text("Detalhes"),
-                          onPressed: () {},
+                          onPressed: () => _onClickCarro(c),
                         ),
                         FlatButton(
                           child: Text("Share"),
@@ -148,4 +174,8 @@ class _CarrosListViewState extends State<CarrosListView>
   @override
   // TODO: implement wantKeepAlive
   bool get wantKeepAlive => true;
+
+  _onClickCarro(Carro c) {
+    push(context, CarroPage(c));
+  }
 }
