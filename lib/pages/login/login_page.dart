@@ -1,6 +1,9 @@
+import 'dart:async';
+
 import 'package:carros/pages/carro/home_page.dart';
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/pages/login/login_api.dart';
+import 'package:carros/pages/login/login_bloc.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/alert_dialog.dart';
 import 'package:carros/utils/navigator.dart';
@@ -15,6 +18,10 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _streamController = StreamController<bool>();
+
+  final _bloc = LoginBloc();
+
   final _tLogin = TextEditingController();
   final _tPassword = TextEditingController();
 
@@ -25,6 +32,13 @@ class _LoginPageState extends State<LoginPage> {
   final _focusSenha = FocusNode();
 
   bool _showProgress = false;
+
+  @override
+  void dispose() {
+    _streamController.close();
+    _bloc.dispose();
+    super.dispose();
+  }
 
   @override
   void initState() {
@@ -80,11 +94,36 @@ class _LoginPageState extends State<LoginPage> {
             SizedBox(
               height: 20,
             ),
-            AppButton(
-              text: "Login",
-              onPressed: _onClickLogin,
-              showProgress: _showProgress,
-            )
+//parte 1
+//            AppButton(
+////              text: "Login",
+////              onPressed: _onClickLogin,
+////              showProgress: _showProgress,
+////            )
+            // parte 2
+//            StreamBuilder<bool>(
+//                stream: _streamController.stream,
+//                initialData: false,
+//                builder: (context, snapshot) {
+//                  bool b = snapshot.data;
+//
+//                  return AppButton(
+//                    text: "Login",
+//                    onPressed: _onClickLogin,
+//                    showProgress: snapshot.data,
+//                  );
+//                })
+            StreamBuilder<bool>(
+                stream: _bloc.stream,
+                initialData: false,
+                builder: (context, snapshot) {
+                  bool b = snapshot.data;
+                  return AppButton(
+                    text: "Login",
+                    onPressed: _onClickLogin,
+                    showProgress: snapshot.data,
+                  );
+                })
           ],
         ),
       ),
@@ -116,6 +155,8 @@ class _LoginPageState extends State<LoginPage> {
     setState(() {
       _showProgress = true;
     });
+
+    _streamController.add(true);
 
     if (!formOk) {
       return;
@@ -157,6 +198,8 @@ class _LoginPageState extends State<LoginPage> {
         _showProgress = false;
       });
 
+      _streamController.add(false);
+
       push(context, HomePage(), replace: true);
     } else {
       print("Login Incorreto");
@@ -165,6 +208,8 @@ class _LoginPageState extends State<LoginPage> {
       setState(() {
         _showProgress = false;
       });
+
+      _streamController.add(false);
     }
   }
 }

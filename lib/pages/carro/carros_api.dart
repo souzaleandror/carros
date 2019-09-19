@@ -87,18 +87,25 @@ class CarrosApi {
     var response = await http.get(url, headers: headers);
 
     String json = response.body;
-    print("Status Code: ${response.statusCode}");
-    print(json);
-    try {
-      List list = convert.json.decode(json);
+    //print("Status Code: ${response.statusCode}");
+    //print(json);
 
-      List<Carro> carros =
-          list.map<Carro>((map) => Carro.fromJson(map)).toList();
+//    try {
+////      List list = convert.json.decode(json);
+////
+////      List<Carro> carros =
+////          list.map<Carro>((map) => Carro.fromJson(map)).toList();
+////
+////      return carros;
+////    } catch (error, exception) {
+////      print("$error > $exception");
+////      throw error;
+////    }
 
-      return carros;
-    } catch (error, exception) {
-      print("$error > $exception");
-      throw error;
-    }
+    List list = convert.json.decode(json);
+
+    List<Carro> carros = list.map<Carro>((map) => Carro.fromJson(map)).toList();
+
+    return carros;
   }
 }
