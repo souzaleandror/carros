@@ -1,6 +1,9 @@
 import 'package:carros/drawer_list.dart';
-import 'package:carros/pages/carro/carros_api.dart';
-import 'package:carros/pages/carro/carros_listview.dart';
+import 'package:carros/pages/carros/carro-form-page.dart';
+import 'package:carros/pages/carros/carros_api.dart';
+import 'package:carros/pages/carros/carros_page.dart';
+import 'package:carros/pages/favoritos/favoritos_page.dart';
+import 'package:carros/utils/navigator.dart';
 import 'package:carros/utils/prefs.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +39,7 @@ class _HomePageState extends State<HomePage>
   }
 
   _iniTabs() async {
-    _tabController = TabController(length: 3, vsync: this);
+    _tabController = TabController(length: 4, vsync: this);
 
     _tabController.index = await Prefs.getInt("tabIdx");
 
@@ -59,22 +62,39 @@ class _HomePageState extends State<HomePage>
           tabs: <Widget>[
             Tab(
               text: "Classicos",
+              icon: Icon(Icons.directions_car),
             ),
             Tab(
               text: "Esportivos",
+              icon: Icon(Icons.directions_car),
             ),
             Tab(
               text: "Luxos",
+              icon: Icon(Icons.directions_car),
+            ),
+            Tab(
+              text: "Favoritos",
+              icon: Icon(Icons.favorite),
             ),
           ],
         ),
       ),
       body: TabBarView(controller: _tabController, children: <Widget>[
-        CarrosListView(TipoCarro.classicos),
-        CarrosListView(TipoCarro.esportivos),
-        CarrosListView(TipoCarro.luxo),
+        CarrosPage(TipoCarro.classicos),
+        CarrosPage(TipoCarro.esportivos),
+        CarrosPage(TipoCarro.luxo),
+        FavoritosPage(),
       ]),
       drawer: DrawerList(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: _onClickAdicionarCarro,
+      ),
     );
+  }
+
+  _onClickAdicionarCarro() {
+    //alert(context, "adicionar Carro !");
+    push(context, CarroFormPage());
   }
 }

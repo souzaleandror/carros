@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-alert(BuildContext context, String msg) {
+alert(BuildContext context, String msg, {Function callback}) {
   showDialog(
     context: context,
     barrierDismissible:
@@ -16,7 +16,11 @@ alert(BuildContext context, String msg) {
             FlatButton(
               child: Text('Ok'),
               onPressed: () {
-                Navigator.of(dialogContext).pop(); // Dismiss alert dialog
+                //Navigator.of(dialogContext).pop(); // Dismiss alert dialog
+                Navigator.pop(context);
+                if (callback != null) {
+                  callback();
+                }
               },
             ),
           ],
