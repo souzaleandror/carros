@@ -3,6 +3,7 @@ import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carro_page.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class CarrosListView extends StatelessWidget {
   List<Carro> carros;
@@ -68,45 +69,53 @@ class CarrosListView extends StatelessWidget {
         itemBuilder: (context, index) {
           Carro c = carros[index];
 
-          return Card(
-            color: Colors.grey[100],
-            child: Container(
-              padding: EdgeInsets.all(10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  CachedNetworkImage(
-                    imageUrl: c.urlFoto ??
-                        "http://www.livroandroid.com.br/livro/carros/classicos/Chevrolet_BelAir.png",
-                    width: 250,
-                  ),
-                  Text(
-                    c.nome ?? "N/D",
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      fontSize: 25,
+          return InkWell(
+            onTap: () {
+              _onClickCarro(context, c);
+            },
+            onLongPress: () {
+              _onClickLongPress(context, c);
+            },
+            child: Card(
+              color: Colors.grey[100],
+              child: Container(
+                padding: EdgeInsets.all(10),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    CachedNetworkImage(
+                      imageUrl: c.urlFoto ??
+                          "http://www.livroandroid.com.br/livro/carros/classicos/Chevrolet_BelAir.png",
+                      width: 250,
                     ),
-                  ),
-                  Text(
-                    "Descricao",
-                    style: TextStyle(fontSize: 16.9),
-                  ),
-                  ButtonTheme.bar(
-                    child: ButtonBar(
-                      children: <Widget>[
-                        FlatButton(
-                          child: Text("Detalhes"),
-                          onPressed: () => _onClickCarro(context, c),
-                        ),
-                        FlatButton(
-                          child: Text("Share"),
-                          onPressed: () {},
-                        ),
-                      ],
+                    Text(
+                      c.nome ?? "N/D",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 25,
+                      ),
                     ),
-                  )
-                ],
+                    Text(
+                      "Descricao",
+                      style: TextStyle(fontSize: 16.9),
+                    ),
+                    ButtonTheme.bar(
+                      child: ButtonBar(
+                        children: <Widget>[
+                          FlatButton(
+                            child: Text("Detalhes"),
+                            onPressed: () => _onClickCarro(context, c),
+                          ),
+                          FlatButton(
+                            child: Text("Share"),
+                            onPressed: () {},
+                          ),
+                        ],
+                      ),
+                    )
+                  ],
+                ),
               ),
             ),
           );
@@ -150,5 +159,68 @@ class CarrosListView extends StatelessWidget {
 
   _onClickCarro(BuildContext context, Carro c) {
     push(context, CarroPage(c));
+  }
+
+  void _onClickLongPress(BuildContext context, Carro c) {
+//    showDialog(
+//        context: context,
+//        builder: (context) {
+//          return SimpleDialog(
+//            title: Text(c.nome),
+//            children: <Widget>[
+//              ListTile(
+//                leading: Icon(Icons.directions_car),
+//                title: Text("Detalhes"),
+//                onTap: () {
+//                  pop(context);
+//                  _onClickCarro(context, c);
+//                },
+//              ),
+//              ListTile(
+//                leading: Icon(Icons.share),
+//                title: Text("Share"),
+//                onTap: () {
+//                  _onClickShare(context, c);
+//                },
+//              )
+//            ],
+//          );
+//        });
+    showModalBottomSheet(
+        context: context,
+        builder: (context) {
+          return Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  c.nome,
+                  style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                ),
+              ),
+              ListTile(
+                leading: Icon(Icons.directions_car),
+                title: Text("Detalhes"),
+                onTap: () {
+                  pop(context);
+                  _onClickCarro(context, c);
+                },
+              ),
+              ListTile(
+                leading: Icon(Icons.share),
+                title: Text("Share"),
+                onTap: () {
+                  _onClickShare(context, c);
+                },
+              )
+            ],
+          );
+        });
+  }
+
+  void _onClickShare(BuildContext context, Carro c) {
+    print("onclickShare");
+    Share.share(c.nome);
   }
 }

@@ -5,6 +5,7 @@ import 'package:carros/pages/carros/carro_page.dart';
 import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/pages/carros/carros_bloc.dart';
 import 'package:carros/pages/carros/carros_listview.dart';
+import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:carros/widgets/text_error.dart';
 import 'package:flutter/material.dart';
@@ -22,6 +23,9 @@ class _CarrosPageState extends State<CarrosPage>
     with AutomaticKeepAliveClientMixin<CarrosPage> {
   List<Carro> carros;
 
+  //StreamSubscription<String> subscription;
+  StreamSubscription<Event> subscription;
+
   String get tipo => widget.tipo;
 
   final _streamController = StreamController<List<Carro>>();
@@ -32,6 +36,7 @@ class _CarrosPageState extends State<CarrosPage>
   void dispose() {
     _streamController.close();
     _bloc.dispose();
+    subscription.cancel();
     super.dispose();
   }
 
@@ -51,7 +56,24 @@ class _CarrosPageState extends State<CarrosPage>
     //_loadCarros();
 
     // parte 3
-    _bloc.loadCarros(tipo);
+    _bloc.fetch(tipo);
+
+    //Escutando uma stream
+    //final bus = Provider.of<EventBus>(context, listen: false);
+    final bus = EventBus.get(context);
+    ;
+//    subscription = bus.stream.listen((String s) {
+//      print("Event $s");
+//      _bloc.fetch(tipo);
+//    });
+
+    subscription = bus.stream.listen((Event e) {
+      print("Event $e");
+      CarroEvent carroEvent = e;
+      if (carroEvent.tipo == tipo) {
+        _bloc.fetch(tipo);
+      }
+    });
   }
 
   _loadData() async {

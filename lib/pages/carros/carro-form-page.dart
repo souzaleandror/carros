@@ -1,13 +1,17 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/utils/alert_dialog.dart';
+import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:carros/widgets/app_button.dart';
 import 'package:carros/widgets/app_text.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 
 class CarroFormPage extends StatefulWidget {
   final Carro carro;
@@ -30,6 +34,8 @@ class _CarroFormPageState extends State<CarroFormPage> {
   var _showProgress = false;
 
   Carro get carro => widget.carro;
+
+  File _file;
 
   // Add validate email function.
   String _validateNome(String value) {
@@ -117,14 +123,23 @@ class _CarroFormPageState extends State<CarroFormPage> {
   }
 
   _headerFoto() {
-    return carro != null
-        ? CachedNetworkImage(
-            imageUrl: carro.urlFoto,
-          )
-        : Image.asset(
-            "assets/camera.png",
-            height: 150,
-          );
+    return InkWell(
+      onTap: _onClickFoto,
+      child: _file != null
+          ? Image.file(
+              _file,
+              height: 150,
+            )
+          : carro != null
+              ? CachedNetworkImage(
+                  imageUrl: carro.urlFoto,
+                  height: 150,
+                )
+              : Image.asset(
+                  "assets/camera.png",
+                  height: 150,
+                ),
+    );
   }
 
   _radioTipo() {
@@ -209,12 +224,13 @@ class _CarroFormPageState extends State<CarroFormPage> {
 
     print("Salvar o carro $c");
 
-    ApiResponse<bool> response = await CarrosApi.save(c);
+    ApiResponse<bool> response = await CarrosApi.save(c, _file);
 
     if (response.ok) {
       alert(context, "Carro Salva com sucesso !", callback: () {
         pop(context);
       });
+      EventBus.get(context).sendEvent(CarroEvent("Carro Salvado", c.tipo));
     } else {
       alert(context, response.msg);
     }
@@ -226,5 +242,14 @@ class _CarroFormPageState extends State<CarroFormPage> {
     });
 
     print("Fim.");
+  }
+
+  _onClickFoto() async {
+    File file = await ImagePicker.pickImage(source: ImageSource.gallery);
+    if (file != null) {
+      setState(() {
+        this._file = file;
+      });
+    }
   }
 }

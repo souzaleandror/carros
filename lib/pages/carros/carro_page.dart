@@ -6,6 +6,7 @@ import 'package:carros/pages/carros/loripsum_api.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/utils/alert_dialog.dart';
+import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:carros/widgets/text.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +38,8 @@ class _CarroPageState extends State<CarroPage> {
         color = favorito ? Colors.red : Colors.grey;
       });
     });
+
+    //
   }
 
   @override
@@ -193,7 +196,7 @@ class _CarroPageState extends State<CarroPage> {
   }
 
   void _onClickFavorito() async {
-    bool favorito = await FavoritoService.Favoritar(carro);
+    bool favorito = await FavoritoService.Favoritar(carro, context);
 
     setState(() {
       color = favorito ? Colors.red : Colors.grey;
@@ -207,6 +210,8 @@ class _CarroPageState extends State<CarroPage> {
 
     if (response.ok) {
       alert(context, "Carro deletado com sucesso", callback: () {
+        EventBus.get(context)
+            .sendEvent(CarroEvent("Carro Deletado", carro.tipo));
         pop(context);
       });
     } else {

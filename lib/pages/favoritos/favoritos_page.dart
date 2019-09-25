@@ -3,10 +3,10 @@ import 'dart:async';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carro_page.dart';
 import 'package:carros/pages/carros/carros_listview.dart';
-import 'package:carros/pages/favoritos/favoritos_bloc.dart';
+import 'package:carros/pages/favoritos/favoritos_model.dart';
 import 'package:carros/utils/navigator.dart';
-import 'package:carros/widgets/text_error.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FavoritosPage extends StatefulWidget {
   @override
@@ -15,43 +15,59 @@ class FavoritosPage extends StatefulWidget {
 
 class _FavoritosPageState extends State<FavoritosPage>
     with AutomaticKeepAliveClientMixin<FavoritosPage> {
-  final _bloc = FavoritosBloc();
-
   @override
   void dispose() {
-    _bloc.dispose();
+    //favoritosBloc.dispose();
     super.dispose();
   }
 
   @override
   void initState() {
     super.initState();
-    _bloc.fetch();
+    //favoritosBloc.fetch();
+//    FavoritosBloc favoritosBloc = Provider.of<FavoritosBloc>(context, listen: false);
+    //favoritosBloc.fetch();
+
+    FavoritosModel model = Provider.of<FavoritosModel>(context, listen: false);
+
+    model.getCarros();
   }
 
   @override
   Widget build(BuildContext context) {
     super.build(context);
 
-    return StreamBuilder(
-        stream: _bloc.stream,
-        builder: (context, snapshot) {
-          if (!snapshot.hasData) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-          if (snapshot.hasError) {
-            print(snapshot.hasError);
-            return TextError("Nao foi possivel buscar os carros");
-          }
-          List<Carro> carros = snapshot.data;
+    //FavoritosBloc favoritosBloc = Provider.of<FavoritosBloc>(context);
+    FavoritosModel model = Provider.of<FavoritosModel>(context);
 
+    List<Carro> carros = model.carros;
+
+    if (carros.isEmpty) {
+      return Center(child: Text("Nenhuma carros nos favoritos"));
+    }
+    return RefreshIndicator(
+        onRefresh: _onRefresh, child: CarrosListView(carros));
+
+//    return StreamBuilder(
+//        stream: model.stream,
+//        builder: (context, snapshot) {
+//          if (!snapshot.hasData) {
+//            return Center(
+//              child: CircularProgressIndicator(),
+//            );
+//          }
+//          if (snapshot.hasError) {
+//            print(snapshot.hasError);
+//            return TextError("Nao foi possivel buscar os carros");
+//          }
+//          List<Carro> carros = snapshot.data;
+//
+////          return RefreshIndicator(
+////              onRefresh: _onRefresh, child: _listView(carros));
+//          print(carros.length);
 //          return RefreshIndicator(
-//              onRefresh: _onRefresh, child: _listView(carros));
-          return RefreshIndicator(
-              onRefresh: _onRefresh, child: CarrosListView(carros));
-        });
+//              onRefresh: _onRefresh, child: CarrosListView(carros));
+//        });
   }
 
   Container _listView(List<Carro> carros) {
@@ -121,6 +137,8 @@ class _FavoritosPageState extends State<FavoritosPage>
 //    return Future.delayed(Duration(seconds: 3), () {
 //      print("Fim");
 //    });
-    return _bloc.fetch();
+    //return favoritosBloc.fetch();
+    //return Provider.of<FavoritosBloc>(context, listen: false).fetch();
+    return Provider.of<FavoritosModel>(context, listen: false).getCarros();
   }
 }

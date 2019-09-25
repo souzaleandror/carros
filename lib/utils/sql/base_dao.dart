@@ -16,7 +16,7 @@ abstract class BaseDAO<T extends Entity> {
     var dbClient = await db;
     var id = await dbClient.insert(tableName, entity.toMap(),
         conflictAlgorithm: ConflictAlgorithm.replace);
-    print('id: $id');
+    //print('id: $id');
     return id;
   }
 
