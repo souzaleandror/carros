@@ -55,7 +55,7 @@ class _HomePageState extends State<HomePage>
     print("HomePage Build");
     return Scaffold(
       appBar: AppBar(
-        title: Text("Carros"),
+        title: Text("Carros2"),
         centerTitle: true,
         bottom: TabBar(
           controller: _tabController,

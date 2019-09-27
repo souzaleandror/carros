@@ -3,6 +3,8 @@ import 'package:carros/pages/carros/carro-form-page.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/pages/carros/loripsum_api.dart';
+import 'package:carros/pages/carros/mapa_page.dart';
+import 'package:carros/pages/carros/video_app.dart';
 import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/utils/alert_dialog.dart';
@@ -56,7 +58,7 @@ class _CarroPageState extends State<CarroPage> {
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.place),
-            onPressed: _onClickMapa,
+            onPressed: () => _onClickMapa(context),
           ),
           IconButton(
             icon: Icon(Icons.videocam),
@@ -173,9 +175,32 @@ class _CarroPageState extends State<CarroPage> {
     );
   }
 
-  void _onClickMapa() {}
+  void _onClickMapa(context) {
+    if (carro.latitude != null && carro.longitude != null) {
+      push(
+          context,
+          MapaPage(
+            carro: carro,
+          ));
+    } else {
+      alert(context, "Erro", "Esse carro nao possui");
+    }
+  }
 
-  void _onClickVideo() {}
+  void _onClickVideo() {
+    if (carro.urlVideo != null && carro.urlVideo.isNotEmpty) {
+      //launch(carro.urlVideo);
+      //VideoPage(carro: carro);
+//      push(
+//          context,
+//          VideoPage(
+//            carro: carro,
+//          ));
+      push(context, VideoApp());
+    } else {
+      alert(context, "Erro", "Este carro nao possui nenhum video");
+    }
+  }
 
   _onClickPopupMenu(String value) {
     switch (value) {
@@ -209,13 +234,13 @@ class _CarroPageState extends State<CarroPage> {
     ApiResponse<bool> response = await CarrosApi.delete(carro);
 
     if (response.ok) {
-      alert(context, "Carro deletado com sucesso", callback: () {
+      alert(context, "Sucesso", "Carro deletado com sucesso", callback: () {
         EventBus.get(context)
             .sendEvent(CarroEvent("Carro Deletado", carro.tipo));
         pop(context);
       });
     } else {
-      alert(context, response.msg);
+      alert(context, "Erro", response.msg);
     }
   }
 }

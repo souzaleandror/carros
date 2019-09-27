@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "727089460603",
+    "firebase_url": "https://carros-9781c.firebaseio.com",
+    "project_id": "carros-9781c",
+    "storage_bucket": "carros-9781c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:727089460603:android:f50a840159ef451945b9de",
+        "android_client_info": {
+          "package_name": "souzaleandror.com.carros"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "727089460603-2mdo0e5tmtgvcvneo7676t1i0kjcl7o8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "souzaleandror.com.carros",
+            "certificate_hash": "783ce243e782b2b6f9662e225edf4d7e767488f1"
+          }
+        },
+        {
+          "client_id": "727089460603-ps9rni8snkqfdll4kcq6o2qlbucqpped.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAlJrRq9m7-c64dlyI60e4_zHmIFc4Zytk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "727089460603-ps9rni8snkqfdll4kcq6o2qlbucqpped.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

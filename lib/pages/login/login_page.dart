@@ -11,6 +11,7 @@ import 'package:carros/widgets/app_button.dart';
 import 'package:carros/widgets/app_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -123,7 +124,14 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: _onClickLogin,
                     showProgress: snapshot.data,
                   );
-                })
+                }),
+            Container(
+              height: 46,
+              margin: EdgeInsets.all(20),
+              child: GoogleSignInButton(
+                onPressed: _onClickGoogle,
+              ),
+            ),
           ],
         ),
       ),
@@ -203,7 +211,7 @@ class _LoginPageState extends State<LoginPage> {
       push(context, HomePage(), replace: true);
     } else {
       print("Login Incorreto");
-      alert(context, response.msg);
+      alert(context, "Erro", response.msg);
 
       setState(() {
         _showProgress = false;
@@ -211,5 +219,9 @@ class _LoginPageState extends State<LoginPage> {
 
       _streamController.add(false);
     }
+  }
+
+  void _onClickGoogle() {
+    print("google");
   }
 }

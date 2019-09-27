@@ -33,6 +33,7 @@ class CarrosBloc {
       bool networkOn = await isNetworkOn();
 
       if (!networkOn) {
+        print("opa");
         List<Carro> carros = await CarroDAO().findAllByTipo(tipo);
         _streamController.add(carros);
         return carros;
@@ -41,6 +42,7 @@ class CarrosBloc {
       List<Carro> carros = await CarrosApi.getCarros(tipo);
 
       if (carros.isNotEmpty) {
+        print("opa2");
         final dao = CarroDAO();
 
         //carros.forEach((c) => dao.save(c));
