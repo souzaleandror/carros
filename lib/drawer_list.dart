@@ -1,25 +1,27 @@
+import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/pages/login/login_page.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/navigator.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 class DrawerList extends StatelessWidget {
-//  UserAccountsDrawerHeader _header(FirebaseUser user) {
-//    return UserAccountsDrawerHeader(
-//      accountName: Text(user.displayName ?? ""),
-//      accountEmail: Text(user.email),
-//      currentAccountPicture: user.photoUrl != null
-//          ? CircleAvatar(
-//              backgroundImage: NetworkImage(user.photoUrl),
-//            )
-//          : FlutterLogo(),
-//    );
-//  }
+  UserAccountsDrawerHeader _header2(FirebaseUser user) {
+    return UserAccountsDrawerHeader(
+      accountName: Text(user.displayName ?? ""),
+      accountEmail: Text(user.email ?? ""),
+      currentAccountPicture: user.photoUrl != null
+          ? CircleAvatar(
+              backgroundImage: NetworkImage(user.photoUrl),
+            )
+          : FlutterLogo(),
+    );
+  }
 
   UserAccountsDrawerHeader _header(Usuario user) {
     return UserAccountsDrawerHeader(
-      accountEmail: Text(user.nome),
-      accountName: Text(user.email),
+      accountEmail: Text(user.nome ?? ""),
+      accountName: Text(user.email ?? ""),
       currentAccountPicture: CircleAvatar(
         backgroundImage: NetworkImage(user.urlFoto),
       ),
@@ -29,8 +31,7 @@ class DrawerList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Future<Usuario> future = Usuario.get();
-
-//    Future<FirebaseUser> future = FirebaseAuth.instance.currentUser();
+    Future<FirebaseUser> future2 = FirebaseAuth.instance.currentUser();
 
     return SafeArea(
       child: Drawer(
@@ -42,6 +43,14 @@ class DrawerList extends StatelessWidget {
                 Usuario user = snapshot.data;
 
                 return user != null ? _header(user) : Container();
+              },
+            ),
+            FutureBuilder<FirebaseUser>(
+              future: future2,
+              builder: (BuildContext context, AsyncSnapshot snapshot) {
+                FirebaseUser user2 = snapshot.data;
+
+                return user2 != null ? _header2(user2) : Container();
               },
             ),
 //            FutureBuilder<FirebaseUser>(
@@ -86,7 +95,7 @@ class DrawerList extends StatelessWidget {
 
   _onClickLogout(BuildContext context) {
     Usuario.clear();
-    //FirebaseService().logout();
+    FirebaseService().logout();
     Navigator.pop(context);
     push(context, LoginPage(), replace: true);
   }

@@ -30,7 +30,7 @@ Future<Map<String, String>> _headers() async {
 
   Map<String, String> headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer ${user.token}"
+    //"Authorization": "Bearer ${user.token}"
   };
   return headers;
 }

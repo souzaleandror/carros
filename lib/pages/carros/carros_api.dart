@@ -157,18 +157,18 @@ class CarrosApi {
 
         print("Novo carro: ${carro.id}");
 
-        return ApiResponse.ok(true);
+        return ApiResponse.ok(result: true);
       }
 
       if (response.body == null || response.body.isEmpty) {
-        return ApiResponse.error("Nao foi possivel salvar o carro");
+        return ApiResponse.error(msg: "Nao foi possivel salvar o carro");
       }
 
       Map mapResponse = convert.json.decode(response.body);
-      return ApiResponse.error(mapResponse["error"]);
+      return ApiResponse.error(msg: mapResponse["error"]);
     } catch (e) {
       print(e);
-      return ApiResponse.error("Nao foi possivel salvar o carro");
+      return ApiResponse.error(msg: "Nao foi possivel salvar o carro");
     }
   }
 
@@ -195,18 +195,18 @@ class CarrosApi {
       print('Response body: ${response.body}');
 
       if (response.statusCode == 200) {
-        return ApiResponse.ok(true);
+        return ApiResponse.ok(result: true);
       }
 
       if (response.body == null || response.body.isEmpty) {
-        return ApiResponse.error("Nao foi possivel deletar o carro");
+        return ApiResponse.error(msg: "Nao foi possivel deletar o carro");
       }
 
       Map mapResponse = convert.json.decode(response.body);
-      return ApiResponse.error(mapResponse["error"]);
+      return ApiResponse.error(msg: mapResponse["error"]);
     } catch (e) {
       print(e);
-      return ApiResponse.error("Nao foi possivel deletar o carro");
+      return ApiResponse.error(msg: "Nao foi possivel deletar o carro");
     }
   }
 }

@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:carros/pages/carros/home_page.dart';
 import 'package:carros/pages/login/api_response.dart';
-import 'package:carros/pages/login/login_api.dart';
+import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/pages/login/login_bloc.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/alert_dialog.dart';
@@ -132,6 +132,22 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: _onClickGoogle,
               ),
             ),
+            Container(
+              height: 46,
+              margin: EdgeInsets.all(20),
+              child: InkWell(
+                onTap: _onClickCadastrar(context),
+                child: Text(
+                  "Cadastre-se",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -195,7 +211,8 @@ class _LoginPageState extends State<LoginPage> {
 //    }
 
     // parte 3
-    ApiResponse response = await LoginApi.login(login, senha);
+    //ApiResponse response = await LoginApi.login(login, senha);
+    ApiResponse response = await _bloc.login(login, senha);
 
     if (response.ok) {
       Usuario user = response.result;
@@ -221,7 +238,18 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void _onClickGoogle() {
-    print("google");
+  void _onClickGoogle() async {
+    final service = FirebaseService();
+    ApiResponse response = await service.loginGoogle();
+
+    if (response.ok) {
+      push(context, HomePage());
+    } else {
+      alert(context, "Error", response.msg);
+    }
+  }
+
+  _onClickCadastrar(BuildContext context) {
+    //push(context, CadastroPage(), replace: true);
   }
 }
