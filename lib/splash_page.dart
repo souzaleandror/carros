@@ -1,4 +1,5 @@
 import 'package:carros/pages/carros/home_page.dart';
+import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/pages/login/login_page.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/navigator.dart';
@@ -22,6 +23,10 @@ class _SplashPageState extends State<SplashPage> {
     // Usuario
     Future<Usuario> futureC = Usuario.get();
     Future<FirebaseUser> futureD = FirebaseAuth.instance.currentUser();
+
+    Usuario.clear();
+    final service = FirebaseService();
+    service.logout();
 
     Future.wait([futureA, futureB, futureC, futureD]).then((List values) {
       Usuario user = values[2];

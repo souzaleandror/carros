@@ -1,6 +1,9 @@
+cloud_firestore=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.12.9+4/
 connectivity=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/connectivity-0.4.4/
 firebase_auth=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+5/
 firebase_core=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/
+firebase_messaging=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_messaging-5.1.6/
+firebase_remote_config=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_remote_config-0.2.0+7/
 google_maps_flutter=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_maps_flutter-0.5.21+4/
 google_sign_in=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/google_sign_in-4.0.7/
 image_picker=/Users/leandrorodrigues/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/image_picker-0.6.1+4/

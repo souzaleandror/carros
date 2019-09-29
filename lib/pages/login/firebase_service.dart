@@ -23,6 +23,45 @@ class FirebaseService {
     return user;
   }
 
+  Future<ApiResponse> cadastrar(
+      {String nome, String email, String password}) async {
+    try {
+      AuthResult result = await _auth.createUserWithEmailAndPassword(
+          email: email, password: password);
+
+      final FirebaseUser fuser = result.user;
+      final userUpdateInfo = UserUpdateInfo();
+      userUpdateInfo.displayName = nome;
+      userUpdateInfo.photoUrl =
+          "http://s3-east-1.amazonaws.com/livetouch-temp/livrows/foto.png";
+      fuser.updateProfile(userUpdateInfo);
+
+      print("Firebase Nome: ${fuser.displayName}");
+      print("Firebase Email: ${fuser.email}");
+      print("Firebase Foto: ${fuser.photoUrl}");
+
+      final user = Usuario(
+          nome: fuser.displayName,
+          login: fuser.email,
+          email: fuser.email,
+          urlFoto: fuser.photoUrl,
+          id: -1,
+          roles: ["NORMA_USER"],
+          token: fuser.uid);
+
+      user.save();
+
+      return ApiResponse.ok(result: true, msg: "Usuario criado com sucesso");
+    } catch (e, exception) {
+      print("Firebase register error $e >> $exception");
+      return ApiResponse.error(
+          result: false,
+          //msg: "Nao foi possivel fazer o cadastro: ${e} >> ${exception}");
+          msg:
+              "Nao foi possivel fazer o cadastro: ${e.message} >> ${exception}");
+    }
+  }
+
   Future<ApiResponse> login(String email, String password) async {
     try {
       AuthResult result = await _auth.signInWithEmailAndPassword(
@@ -40,10 +79,11 @@ class FirebaseService {
 
       user.save();
 
-      return ApiResponse.ok();
+      return ApiResponse.ok(result: true, msg: "Fazendo o login");
     } catch (e, exception) {
-      print("Firebase error $e >> $exception");
-      return ApiResponse.error(msg: "Nao foi possivel fazer o login");
+      print("Firebase login error $e >> $exception");
+      return ApiResponse.error(
+          result: false, msg: "Nao foi possivel fazer o login");
     }
   }
 

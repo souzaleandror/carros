@@ -4,6 +4,7 @@ import 'package:carros/pages/carros/home_page.dart';
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/pages/login/login_bloc.dart';
+import 'package:carros/pages/login/login_page.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/alert_dialog.dart';
 import 'package:carros/utils/navigator.dart';
@@ -26,7 +27,7 @@ class _CadastroPageState extends State<CadastroPage> {
 //  final _tPassword = TextEditingController();
 
   final _tNome = TextEditingController(text: "teste22");
-  final _tLogin = TextEditingController(text: "teste22");
+  final _tEmail = TextEditingController(text: "teste22");
   final _tPassword = TextEditingController(text: "teste22");
 
   final _formKey = GlobalKey<FormState>();
@@ -71,15 +72,18 @@ class _CadastroPageState extends State<CadastroPage> {
                 validator: _validatorNome,
                 keyboardType: TextInputType.text,
                 textInputAction: TextInputAction.next,
-                nextFocus: _focusNome),
+                nextFocus: _focusEmail),
+            SizedBox(
+              height: 20,
+            ),
             AppText("Login", "Digite o Login",
-                controller: _tLogin,
+                controller: _tEmail,
                 validator: _validatorLogin,
                 keyboardType: TextInputType.emailAddress,
                 textInputAction: TextInputAction.next,
                 nextFocus: _focusSenha),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             AppText(
               "Senha",
@@ -97,13 +101,28 @@ class _CadastroPageState extends State<CadastroPage> {
                 stream: _bloc.stream,
                 initialData: false,
                 builder: (context, snapshot) {
-                  bool b = snapshot.data;
                   return AppButton(
-                    text: "Login",
-                    onPressed: _onClickLogin,
+                    text: "Cadastrar",
+                    onPressed: () => _onClickCadastrar(context),
                     showProgress: snapshot.data,
                   );
                 }),
+            Container(
+              height: 46,
+              margin: EdgeInsets.all(20),
+              child: InkWell(
+                onTap: () => _onClickCancelar(context),
+                child: Text(
+                  "Cancelar",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 16,
+                    color: Colors.blue,
+                    decoration: TextDecoration.underline,
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -150,7 +169,7 @@ class _CadastroPageState extends State<CadastroPage> {
       return;
     }
 
-    String login = _tLogin.text;
+    String login = _tEmail.text;
     String senha = _tPassword.text;
 
     print("Login = ${login} e senha = ${senha}");
@@ -176,7 +195,7 @@ class _CadastroPageState extends State<CadastroPage> {
 
     // parte 3
     //ApiResponse response = await LoginApi.login(login, senha);
-    ApiResponse response = await _bloc.login(login, senha);
+    ApiResponse response = await _bloc.loginFire(login, senha);
 
     if (response.ok) {
       Usuario user = response.result;
@@ -213,5 +232,25 @@ class _CadastroPageState extends State<CadastroPage> {
     }
   }
 
-  _onClickCadastrar(BuildContext context) {}
+  _onClickCadastrar(BuildContext context) async {
+    String nome = _tNome.text;
+    String email = _tEmail.text;
+    String senha = _tPassword.text;
+
+    print("Nome = ${nome} - Email = ${email} - Senha = ${senha}");
+
+    final service = FirebaseService();
+    ApiResponse response =
+        await service.cadastrar(nome: nome, email: email, password: senha);
+
+    if (response.ok) {
+      push(context, HomePage());
+    } else {
+      alert(context, "Error", response.msg);
+    }
+  }
+
+  _onClickCancelar(BuildContext context) {
+    push(context, LoginPage(), replace: true);
+  }
 }

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/pages/login/firebase_service.dart';
+import 'package:carros/pages/login/login_api.dart';
 import 'package:carros/pages/login/usuario.dart';
 
 class LoginBloc {
@@ -9,7 +10,17 @@ class LoginBloc {
 
   Stream<bool> get stream => _streamController.stream;
 
-  Future<ApiResponse<Usuario>> login(String login, String password) async {
+  Future<ApiResponse<Usuario>> loginAPI(String login, String password) async {
+    _streamController.add(true);
+
+    ApiResponse response = await LoginApi.login(login, password);
+
+    _streamController.add(false);
+
+    return response;
+  }
+
+  Future<ApiResponse<Usuario>> loginFire(String login, String password) async {
     _streamController.add(true);
 
     //ApiResponse response = await LoginApi.login(login, password);

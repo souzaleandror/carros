@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:carros/pages/carros/home_page.dart';
 import 'package:carros/pages/login/api_response.dart';
+import 'package:carros/pages/login/cadastro_page.dart';
 import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/pages/login/login_bloc.dart';
 import 'package:carros/pages/login/usuario.dart';
@@ -9,6 +10,9 @@ import 'package:carros/utils/alert_dialog.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:carros/widgets/app_button.dart';
 import 'package:carros/widgets/app_text.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_messaging/firebase_messaging.dart';
+import 'package:firebase_remote_config/firebase_remote_config.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
@@ -22,6 +26,7 @@ class _LoginPageState extends State<LoginPage> {
   final _streamController = StreamController<bool>();
 
   final _bloc = LoginBloc();
+  final _bloc2 = LoginBloc();
 
   final _tLogin = TextEditingController();
   final _tPassword = TextEditingController();
@@ -34,10 +39,14 @@ class _LoginPageState extends State<LoginPage> {
 
   bool _showProgress = false;
 
+  FirebaseUser user;
+  final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
+
   @override
   void dispose() {
     _streamController.close();
     _bloc.dispose();
+    _bloc2.dispose();
     super.dispose();
   }
 
@@ -54,6 +63,40 @@ class _LoginPageState extends State<LoginPage> {
 //        });
       }
     });
+
+    //final RemoteConfig remoteConfig = await RemoteConfig.instance;
+
+    RemoteConfig.instance.then((remoteConfig) {
+      remoteConfig.setConfigSettings(RemoteConfigSettings(debugMode: false));
+      //final defaults = <String, dynamic>{'welcome': 'default welcome'};
+      //remoteConfig.setDefaults(defaults);
+
+      try {
+        remoteConfig.fetch(expiration: const Duration(minutes: 1));
+        remoteConfig.activateFetched();
+      } catch (e, exception) {
+        print("Remote Confing: $e >> $exception");
+      }
+      final mensagem = remoteConfig.getString("eu");
+
+      print('mensagem: ${mensagem}');
+    });
+
+    _firebaseMessaging.getToken().then((token) {
+      print("Firebase Toke ${token}");
+    });
+
+    _firebaseMessaging.configure(
+      onMessage: (Map<String, dynamic> message) async {
+        print("onMessage: ${message}");
+      },
+      onResume: (Map<String, dynamic> message) async {
+        print("onResume: ${message}");
+      },
+      onLaunch: (Map<String, dynamic> message) async {
+        print("onLaunch: ${message}");
+      },
+    );
   }
 
   @override
@@ -115,13 +158,24 @@ class _LoginPageState extends State<LoginPage> {
 //                  );
 //                })
             StreamBuilder<bool>(
+                stream: _bloc2.stream,
+                initialData: false,
+                builder: (context, snapshot) {
+                  bool b = snapshot.data;
+                  return AppButton(
+                    text: "Login Com API Carros",
+                    onPressed: _onClickLogin,
+                    showProgress: snapshot.data,
+                  );
+                }),
+            StreamBuilder<bool>(
                 stream: _bloc.stream,
                 initialData: false,
                 builder: (context, snapshot) {
                   bool b = snapshot.data;
                   return AppButton(
-                    text: "Login",
-                    onPressed: _onClickLogin,
+                    text: "Login Com Firebase",
+                    onPressed: _onClickLoginGoogle,
                     showProgress: snapshot.data,
                   );
                 }),
@@ -133,10 +187,11 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             Container(
+              color: Colors.white,
               height: 46,
               margin: EdgeInsets.all(20),
               child: InkWell(
-                onTap: _onClickCadastrar(context),
+                onTap: () => _onClickCadastrar(context),
                 child: Text(
                   "Cadastre-se",
                   textAlign: TextAlign.center,
@@ -212,7 +267,7 @@ class _LoginPageState extends State<LoginPage> {
 
     // parte 3
     //ApiResponse response = await LoginApi.login(login, senha);
-    ApiResponse response = await _bloc.login(login, senha);
+    ApiResponse response = await _bloc.loginAPI(login, senha);
 
     if (response.ok) {
       Usuario user = response.result;
@@ -238,6 +293,20 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
+  void _onClickLoginGoogle() async {
+    String login = _tLogin.text;
+    String senha = _tPassword.text;
+
+    final service = FirebaseService();
+    ApiResponse response = await service.login(login, senha);
+
+    if (response.ok) {
+      push(context, HomePage());
+    } else {
+      alert(context, "Error", response.msg);
+    }
+  }
+
   void _onClickGoogle() async {
     final service = FirebaseService();
     ApiResponse response = await service.loginGoogle();
@@ -250,6 +319,6 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   _onClickCadastrar(BuildContext context) {
-    //push(context, CadastroPage(), replace: true);
+    push(context, CadastroPage(), replace: true);
   }
 }
