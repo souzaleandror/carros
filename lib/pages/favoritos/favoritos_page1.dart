@@ -8,13 +8,13 @@ import 'package:carros/utils/navigator.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FavoritosPage extends StatefulWidget {
+class FavoritosPage1 extends StatefulWidget {
   @override
-  _FavoritosPageState createState() => _FavoritosPageState();
+  _FavoritosPage1State createState() => _FavoritosPage1State();
 }
 
-class _FavoritosPageState extends State<FavoritosPage>
-    with AutomaticKeepAliveClientMixin<FavoritosPage> {
+class _FavoritosPage1State extends State<FavoritosPage1>
+    with AutomaticKeepAliveClientMixin<FavoritosPage1> {
   @override
   void dispose() {
     //favoritosBloc.dispose();

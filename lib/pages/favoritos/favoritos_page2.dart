@@ -3,20 +3,18 @@ import 'dart:async';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carro_page.dart';
 import 'package:carros/pages/carros/carros_listview.dart';
-import 'package:carros/pages/favoritos/favorito_service.dart';
 import 'package:carros/pages/favoritos/favoritos_model.dart';
 import 'package:carros/utils/navigator.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class FavoritosPage extends StatefulWidget {
+class FavoritosPage2 extends StatefulWidget {
   @override
-  _FavoritosPageState createState() => _FavoritosPageState();
+  _FavoritosPage2State createState() => _FavoritosPage2State();
 }
 
-class _FavoritosPageState extends State<FavoritosPage>
-    with AutomaticKeepAliveClientMixin<FavoritosPage> {
+class _FavoritosPage2State extends State<FavoritosPage2>
+    with AutomaticKeepAliveClientMixin<FavoritosPage2> {
   @override
   void dispose() {
     //favoritosBloc.dispose();
@@ -39,44 +37,38 @@ class _FavoritosPageState extends State<FavoritosPage>
   Widget build(BuildContext context) {
     super.build(context);
 
-    final service = FavoritoService();
+    //FavoritosBloc favoritosBloc = Provider.of<FavoritosBloc>(context);
+    FavoritosModel model = Provider.of<FavoritosModel>(context);
 
-    return Container(
-      padding: EdgeInsets.all(12),
-      child: StreamBuilder<QuerySnapshot>(
-        //stream: Firestore.instance.collection('carros').snapshots(),
-        stream: service.getCarros2(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (snapshot.hasData) {
-            //Part1
-//            List<Carro> carros = List<Carro>();
-//            snapshot.data.documents.map((DocumentSnapshot document) {
-//              Carro c = Carro.fromJson(document.data);
-//              carros.add(c);
-//            }).toList();
-//            return CarrosListView(carros);
+    List<Carro> carros = model.carros;
 
-            List<Carro> carros = service.toList(snapshot);
+    if (carros.isEmpty) {
+      return Center(child: Text("Nenhuma carros nos favoritos"));
+    }
 
-            return CarrosListView(carros);
-          } else if (snapshot.hasError) {
-            return Center(
-              child: Text(
-                "Sem dados",
-                style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 26,
-                    fontStyle: FontStyle.italic),
-              ),
-            );
-          } else {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        },
-      ),
-    );
+    return RefreshIndicator(
+        onRefresh: _onRefresh, child: CarrosListView(carros));
+
+//    return StreamBuilder(
+//        stream: model.stream,
+//        builder: (context, snapshot) {
+//          if (!snapshot.hasData) {
+//            return Center(
+//              child: CircularProgressIndicator(),
+//            );
+//          }
+//          if (snapshot.hasError) {
+//            print(snapshot.hasError);
+//            return TextError("Nao foi possivel buscar os carros");
+//          }
+//          List<Carro> carros = snapshot.data;
+//
+////          return RefreshIndicator(
+////              onRefresh: _onRefresh, child: _listView(carros));
+//          print(carros.length);
+//          return RefreshIndicator(
+//              onRefresh: _onRefresh, child: CarrosListView(carros));
+//        });
   }
 
   Container _listView(List<Carro> carros) {

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:carros/pages/carros/home_page.dart';
 import 'package:carros/pages/login/api_response.dart';
@@ -97,6 +98,18 @@ class _LoginPageState extends State<LoginPage> {
         print("onLaunch: ${message}");
       },
     );
+
+    if (Platform.isIOS) {
+      _firebaseMessaging.requestNotificationPermissions(IosNotificationSettings(
+        sound: true,
+        badge: true,
+        alert: true,
+      ));
+      _firebaseMessaging.onIosSettingsRegistered
+          .listen((IosNotificationSettings settings) {
+        print("IOS push Settings: [$settings]");
+      });
+    }
   }
 
   @override

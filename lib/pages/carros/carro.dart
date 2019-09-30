@@ -41,15 +41,28 @@ class Carro extends Entity {
       this.latitude,
       this.longitude});
 
-  Carro.fromJson(Map<String, dynamic> json) {
-    id = json['id'];
-    nome = json['nome'];
-    tipo = json['tipo'];
-    descricao = json['descricao'];
-    urlFoto = json['urlFoto'];
-    urlVideo = json['urlVideo'];
-    latitude = json['latitude'];
-    longitude = json['longitude'];
+//  Carro.fromJson(Map<String, dynamic> json) {
+//    id = json['id'];
+//    nome = json['nome'];
+//    tipo = json['tipo'];
+//    descricao = json['descricao'];
+//    urlFoto = json['urlFoto'];
+//    urlVideo = json['urlVideo'];
+//    latitude = json['latitude'];
+//    longitude = json['longitude'];
+//  }
+
+  factory Carro.fromJson(Map<String, dynamic> json) {
+    return Carro(
+      //id: int.parse(json["id"]),
+      nome: json["nome"],
+      //tipo: json["tipo"],
+      descricao: json["descricao"],
+      urlFoto: json["urlFoto"],
+      //urlVideo: json["urlVideo"],
+      //latitude: json["latitude"],
+      //longitude: json["longitude"],
+    );
   }
 
   Carro.fromMap(Map<String, dynamic> map) {
@@ -79,7 +92,6 @@ class Carro extends Entity {
   @override
   Map<String, dynamic> toMap() {
     final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['id'] = this.id;
     data['nome'] = this.nome;
     data['tipo'] = this.tipo;
     data['descricao'] = this.descricao;
@@ -87,6 +99,9 @@ class Carro extends Entity {
     data['urlVideo'] = this.urlVideo;
     data['latitude'] = this.latitude;
     data['longitude'] = this.longitude;
+    if (this.id != null) {
+      data["id"] = this.id;
+    }
     return data;
   }
 

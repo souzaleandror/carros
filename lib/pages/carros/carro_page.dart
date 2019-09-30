@@ -35,13 +35,16 @@ class _CarroPageState extends State<CarroPage> {
     super.initState();
     _loripsumBloc.fetch();
 
-    FavoritoService.isFavorito(carro).then((bool favorito) {
-      setState(() {
-        color = favorito ? Colors.red : Colors.grey;
-      });
-    });
+//    FavoritoService.isFavorito(carro).then((bool favorito) {
+//      setState(() {
+//        color = favorito ? Colors.red : Colors.grey;
+//      });
+//    });
 
-    //
+    final service = FavoritoService();
+    service.isFavorito2(carro).then((b) {
+      color = b ? Colors.red : Colors.grey;
+    });
   }
 
   @override
@@ -54,7 +57,7 @@ class _CarroPageState extends State<CarroPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.carro.nome),
+        title: Text("${widget.carro.nome} - ${widget.carro.id}"),
         actions: <Widget>[
           IconButton(
             icon: Icon(Icons.place),
@@ -221,10 +224,16 @@ class _CarroPageState extends State<CarroPage> {
   }
 
   void _onClickFavorito() async {
-    bool favorito = await FavoritoService.Favoritar(carro, context);
+//    bool favorito = await FavoritoService.Favoritar(carro, context);
+//
+//    setState(() {
+//      color = favorito ? Colors.red : Colors.grey;
+//    });
+    final service = FavoritoService();
+    final exists = await service.favoritar2(carro);
 
     setState(() {
-      color = favorito ? Colors.red : Colors.grey;
+      color = exists ? Colors.red : Colors.grey;
     });
   }
 
