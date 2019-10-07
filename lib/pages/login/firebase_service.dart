@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:path/path.dart' as path;
 
 class FirebaseService {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
@@ -24,7 +28,7 @@ class FirebaseService {
   }
 
   Future<ApiResponse> cadastrar(
-      {String nome, String email, String password}) async {
+      {String nome, String email, String password, File file}) async {
     try {
       AuthResult result = await _auth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -39,6 +43,11 @@ class FirebaseService {
       print("Firebase Nome: ${fuser.displayName}");
       print("Firebase Email: ${fuser.email}");
       print("Firebase Foto: ${fuser.photoUrl}");
+
+      if (file != null) {
+        userUpdateInfo.photoUrl =
+            await FirebaseService.uploadFirebaseStorage(file);
+      }
 
       final user = Usuario(
           nome: fuser.displayName,
@@ -129,5 +138,16 @@ class FirebaseService {
   Future<void> logout() async {
     await _auth.signOut();
     await _googleSignIn.signOut();
+  }
+
+  static Future<String> uploadFirebaseStorage(File file) async {
+    print("Upload to Storage: $file");
+    String fileName = path.basename(file.path);
+    final storageRef = FirebaseStorage.instance.ref().child(fileName);
+
+    final StorageTaskSnapshot task = await storageRef.putFile(file).onComplete;
+    final String urlFoto = await task.ref.getDownloadURL();
+    print("Storage > $urlFoto");
+    return urlFoto;
   }
 }

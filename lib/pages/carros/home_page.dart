@@ -3,9 +3,13 @@ import 'package:carros/pages/carros/carro-form-page.dart';
 import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/pages/carros/carros_page.dart';
 import 'package:carros/pages/favoritos/favoritos_page.dart';
+import 'package:carros/pages/search/carros_search.dart';
+import 'package:carros/utils/alert_dialog.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:carros/utils/prefs.dart';
 import 'package:flutter/material.dart';
+
+import 'carro.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -56,6 +60,12 @@ class _HomePageState extends State<HomePage>
     return Scaffold(
       appBar: AppBar(
         title: Text("Carros2"),
+        actions: <Widget>[
+          IconButton(
+            onPressed: _onClickSearch,
+            icon: Icon(Icons.search),
+          ),
+        ],
         centerTitle: true,
         bottom: TabBar(
           controller: _tabController,
@@ -96,5 +106,13 @@ class _HomePageState extends State<HomePage>
   _onClickAdicionarCarro() {
     //alert(context, "adicionar Carro !");
     push(context, CarroFormPage());
+  }
+
+  Future _onClickSearch() async {
+    final carro =
+        await showSearch<Carro>(context: context, delegate: CarrosSearch());
+    if (carro != null) {
+      alert(context, "Busca", carro.nome);
+    }
   }
 }

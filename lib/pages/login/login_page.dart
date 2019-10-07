@@ -8,6 +8,7 @@ import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/pages/login/login_bloc.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/alert_dialog.dart';
+import 'package:carros/utils/finger_print.dart';
 import 'package:carros/utils/navigator.dart';
 import 'package:carros/widgets/app_button.dart';
 import 'package:carros/widgets/app_text.dart';
@@ -24,6 +25,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  Future<Usuario> future = Usuario.get();
   final _streamController = StreamController<bool>();
 
   final _bloc = LoginBloc();
@@ -216,6 +218,15 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
             ),
+            Container(
+              height: 46,
+              child: InkWell(
+                onTap: () {
+                  _onClickFingerPrint(context);
+                },
+                child: Image.asset("assets/finger.png", color: Colors.blue),
+              ),
+            ),
           ],
         ),
       ),
@@ -333,5 +344,13 @@ class _LoginPageState extends State<LoginPage> {
 
   _onClickCadastrar(BuildContext context) {
     push(context, CadastroPage(), replace: true);
+  }
+
+  _onClickFingerPrint(BuildContext context) async {
+    final ok = await FingerPrint.verify();
+
+    if (ok) {
+      push(context, HomePage(), replace: true);
+    }
   }
 }

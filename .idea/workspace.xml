@@ -2,38 +2,54 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2b569b0-942e-4df8-9c91-424cf8197bc3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page2.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fake/classicos.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fake/esportivos.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fake/luxo.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/search/carros_search.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/pages/site_page.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/utils/finger_print.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.flutter-plugins" beforeDir="false" afterPath="$PROJECT_DIR$/.flutter-plugins" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Dart_Packages.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Flutter_Plugins.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/classAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/jarAnalysis.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/javaCompile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/javaCompile/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/4.10.2/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/android/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/carros.iml" beforeDir="false" afterPath="$PROJECT_DIR$/carros.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/App.framework/App" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/App.framework/App" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/App.framework/flutter_assets/AssetManifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/App.framework/flutter_assets/AssetManifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Flutter/App.framework/flutter_assets/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/App.framework/flutter_assets/LICENSE" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Flutter/App.framework/flutter_assets/kernel_blob.bin" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Flutter/App.framework/flutter_assets/kernel_blob.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Podfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Podfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Manifest.lock" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Manifest.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/project.pbxproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/BoringSSL-GRPC.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/BoringSSL-GRPC.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/Pods-Runner.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/Pods-Runner.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/gRPC-C++-gRPCCertificates-Cpp.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/gRPC-C++-gRPCCertificates-Cpp.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/gRPC-C++.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/gRPC-C++.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/gRPC-Core.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/gRPC-Core.xcscheme" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/leveldb-library.xcscheme" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/leveldb-library.xcscheme" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcodeproj/project.pbxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner.xcworkspace/xcuserdata/leandrorodrigues.xcuserdatad/UserInterfaceState.xcuserstate" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner.xcworkspace/xcuserdata/leandrorodrigues.xcuserdatad/UserInterfaceState.xcuserstate" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ios/Runner/Info.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/Info.plist" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/carros/carro.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/carros/carro.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/carros/carro_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/carros/carro_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/favoritos/favorito_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favoritos/favorito_service.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page1.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page1.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/xcschememanagement.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Pods.xcodeproj/xcuserdata/leandrorodrigues.xcuserdatad/xcschemes/xcschememanagement.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Firebase/Firebase.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Firebase/Firebase.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.markdown" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.plist" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-acknowledgements.plist" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/cloud_firestore/cloud_firestore.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/cloud_firestore/cloud_firestore.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_auth/firebase_auth.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_auth/firebase_auth.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_core/firebase_core.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_core/firebase_core.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_messaging/firebase_messaging.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_messaging/firebase_messaging.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_remote_config/firebase_remote_config.xcconfig" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Pods/Target Support Files/firebase_remote_config/firebase_remote_config.xcconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" beforeDir="false" afterPath="$PROJECT_DIR$/ios/Runner/GeneratedPluginRegistrant.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/drawer_list.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/drawer_list.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/carros/carro-form-page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/carros/carro-form-page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/carros/carros_api.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/carros/carros_api.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/carros/carros_listview.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/carros/carros_listview.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/carros/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/carros/home_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/pages/login/firebase_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/firebase_service.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/pages/login/login_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/pages/login/login_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/utils/sql/base_dao.dart" beforeDir="false" afterPath="$PROJECT_DIR$/lib/utils/sql/base_dao.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pubspec.yaml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.dart_tool/" />
     <ignored path="$PROJECT_DIR$/.idea/" />
@@ -50,26 +66,58 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="4_WVGA_Nexus_S_API_22" />
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/lib/pages/login/login_page.dart">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/carros/home_page.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="130">
-              <caret line="102" column="15" lean-forward="true" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
+            <state relative-caret-position="562">
+              <caret line="108" column="3" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
               <folding>
-                <element signature="e#0#20#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
+                <element signature="e#1495#2589#0" expanded="true" />
+                <element signature="e#2878#2883#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/lib/main.dart">
+        <entry file="file://$PROJECT_DIR$/lib/pages/search/carros_search.dart">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+            <state relative-caret-position="421">
+              <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
               <folding>
-                <element signature="e#0#61#0" expanded="true" />
+                <element signature="e#0#48#0" expanded="true" />
+                <element signature="e#154#232#0" expanded="true" />
+                <element signature="e#403#498#0" expanded="true" />
+                <element signature="e#506#568#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_listview.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#64#0" expanded="true" />
+                <element signature="e#441#4322#0" expanded="true" />
+                <element signature="e#6276#6333#0" expanded="true" />
+                <marker date="1570397910087" expanded="true" signature="4576:5301" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_api.dart">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="439">
+              <caret line="241" column="50" selection-start-line="241" selection-start-column="50" selection-end-line="241" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#33#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -86,10 +134,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get</find>
-      <find>save(</find>
-      <find>favoritosBloc</find>
-      <find>dis</find>
       <find>deletar</find>
       <find>280</find>
       <find>_onClickCarro</find>
@@ -116,12 +160,17 @@
       <find>favoritar</find>
       <find>favorit</find>
       <find>initstat</find>
+      <find>path</find>
+      <find>fUser</find>
+      <find>getCarros</find>
+      <find>conne</find>
     </findStrings>
     <replaceStrings>
       <replace>VideoPage</replace>
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/lib/pages/carros</dir>
+      <dir>$PROJECT_DIR$/lib</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -130,13 +179,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/lib/pages/favoritos/base_dao.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/favoritos/entity.dart" />
-        <option value="$PROJECT_DIR$/assets/create.sql" />
-        <option value="$PROJECT_DIR$/lib/pages/favoritos/db_helper.dart" />
-        <option value="$PROJECT_DIR$/assets/sql/create.sql" />
-        <option value="$PROJECT_DIR$/lib/pages/favoritos/favorito_dao.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/favoritos/favorito.dart" />
         <option value="$PROJECT_DIR$/lib/pages/carros/carro_dao.dart" />
         <option value="$PROJECT_DIR$/lib/widgets/app_button.dart" />
         <option value="$PROJECT_DIR$/../flutter_hello/lib/utils/nav.dart" />
@@ -145,9 +187,7 @@
         <option value="$PROJECT_DIR$/lib/main.dart" />
         <option value="$PROJECT_DIR$/lib/utils/event_bus.dart" />
         <option value="$PROJECT_DIR$/lib/pages/carros/carros_page.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/carros/carros_listview.dart" />
         <option value="$PROJECT_DIR$/lib/utils/alert_dialog.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/carros/carro-form-page.dart" />
         <option value="$PROJECT_DIR$/lib/pages/carros/video_page.dart" />
         <option value="$PROJECT_DIR$/lib/pages/carros/video_app.dart" />
         <option value="$PROJECT_DIR$/ios/Runner/AppDelegate.swift" />
@@ -161,26 +201,35 @@
         <option value="$PROJECT_DIR$/ios/Runner/Info.plist" />
         <option value="$PROJECT_DIR$/lib/pages/login/api_response.dart" />
         <option value="$PROJECT_DIR$/lib/pages/login/login_api.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/carros/upload_api.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/carros/carros_api.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/login/firebase_service.dart" />
         <option value="$PROJECT_DIR$/lib/splash_page.dart" />
-        <option value="$PROJECT_DIR$/lib/drawer_list.dart" />
         <option value="$PROJECT_DIR$/lib/pages/login/cadastro_page.dart" />
         <option value="$PROJECT_DIR$/lib/pages/login/login_bloc.dart" />
         <option value="$PROJECT_DIR$/lib/utils/http_helper.dart" />
-        <option value="$PROJECT_DIR$/pubspec.yaml" />
         <option value="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page1.dart" />
         <option value="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page2.dart" />
-        <option value="$PROJECT_DIR$/lib/pages/carros/home_page.dart" />
         <option value="$PROJECT_DIR$/lib/pages/favoritos/favoritos_bloc.dart" />
         <option value="$PROJECT_DIR$/lib/pages/favoritos/favoritos_page.dart" />
         <option value="$PROJECT_DIR$/lib/pages/carros/carro.dart" />
         <option value="$PROJECT_DIR$/lib/pages/favoritos/favorito_service.dart" />
-        <option value="$PROJECT_DIR$/lib/utils/sql/base_dao.dart" />
         <option value="$PROJECT_DIR$/lib/pages/carros/carro_page.dart" />
         <option value="$PROJECT_DIR$/android/app/src/main/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/lib/pages/carros/upload_api.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/carros/carro-form-page.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/login/firebase_service.dart" />
+        <option value="$PROJECT_DIR$/lib/drawer_list.dart" />
+        <option value="$PROJECT_DIR$/lib/utils/sql/base_dao.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/site_page.dart" />
+        <option value="$PROJECT_DIR$/lib/utils/finger_print.dart" />
         <option value="$PROJECT_DIR$/lib/pages/login/login_page.dart" />
+        <option value="$PROJECT_DIR$/pubspec.yaml" />
+        <option value="$PROJECT_DIR$/assets/fake/esportivos.json.dart" />
+        <option value="$PROJECT_DIR$/assets/fake/esportivos.json" />
+        <option value="$PROJECT_DIR$/assets/fake/luxo.json" />
+        <option value="$PROJECT_DIR$/assets/fake/classicos.json" />
+        <option value="$PROJECT_DIR$/lib/pages/carros/home_page.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/search/carros_search.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/carros/carros_api.dart" />
+        <option value="$PROJECT_DIR$/lib/pages/carros/carros_listview.dart" />
       </list>
     </option>
   </component>
@@ -197,7 +246,6 @@
     <panes>
       <pane id="AndroidView" />
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -208,7 +256,13 @@
             <path>
               <item name="carros" type="b2602c69:ProjectViewProjectNode" />
               <item name="carros" type="462c0819:PsiDirectoryNode" />
-              <item name="ios" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carros" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carros" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="fake" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="carros" type="b2602c69:ProjectViewProjectNode" />
@@ -226,12 +280,19 @@
               <item name="carros" type="462c0819:PsiDirectoryNode" />
               <item name="lib" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="login" type="462c0819:PsiDirectoryNode" />
+              <item name="carros" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="carros" type="b2602c69:ProjectViewProjectNode" />
+              <item name="carros" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,7 +348,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19027181" />
       <window_info id="Captures" order="1" side_tool="true" />
@@ -300,7 +362,7 @@
       <window_info id="Favorites" order="8" side_tool="true" />
       <window_info id="DB Browser" order="9" />
       <window_info anchor="bottom" id="Dart Analysis" order="0" weight="0.32939634" />
-      <window_info anchor="bottom" id="Run" order="1" weight="0.32229298" />
+      <window_info anchor="bottom" id="Run" order="1" weight="0.24840765" />
       <window_info anchor="bottom" id="TODO" order="2" />
       <window_info anchor="bottom" id="Android Profiler" order="3" show_stripe_button="false" />
       <window_info anchor="bottom" id="Logcat" order="4" />
@@ -309,7 +371,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Flutter Performance" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.27515924" />
+      <window_info active="true" anchor="bottom" id="Messages" order="10" visible="true" weight="0.20382166" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="bottom" id="Find" order="12" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
@@ -352,108 +414,6 @@
     </layout-to-restore>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/lib/utils/navigator.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-          <folding>
-            <element signature="e#112#382#0" expanded="true" />
-            <element signature="e#445#481#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/api_response.dart" />
-    <entry file="file://$PROJECT_DIR$/lib/utils/event_bus.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#141#148#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carro-form-page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="298">
-          <caret line="230" column="21" lean-forward="true" selection-start-line="230" selection-start-column="21" selection-end-line="230" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#17#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/alert_dialog.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/video_app.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="25" column="19" selection-start-line="25" selection-start-column="19" selection-end-line="25" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="e#349#700#0" expanded="true" />
-            <element signature="e#715#1454#0" expanded="true" />
-            <element signature="e#1485#1538#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/video_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="38" column="19" lean-forward="true" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="e#391#742#0" expanded="true" />
-            <element signature="e#1563#1616#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ios/Runner/AppDelegate.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/mapa_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="33" column="33" lean-forward="true" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-            <element signature="e#325#470#0" expanded="true" />
-            <element signature="e#482#656#0" expanded="true" />
-            <element signature="e#877#1202#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/android/app/google-services.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/android/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -472,13 +432,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="1309" column="6" selection-start-line="1309" selection-start-column="6" selection-end-line="1309" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/network.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -507,28 +460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="84" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_api.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#1939#2869#0" expanded="true" />
-            <element signature="e#2931#4516#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/upload_api.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -584,19 +515,6 @@
     <entry file="file://$PROJECT_DIR$/ios/Pods/gRPC-Core/src/core/ext/filters/client_channel/http_proxy.cc">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/drawer_list.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#58#0" expanded="true" />
-            <element signature="e#398#718#0" expanded="true" />
-            <element signature="e#1060#3081#0" expanded="true" />
-            <element signature="e#3122#3255#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/login/usuario.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -605,18 +523,6 @@
             <element signature="e#393#598#0" expanded="true" />
             <element signature="e#1096#1140#0" expanded="true" />
             <element signature="e#1173#1392#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/login/firebase_service.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-            <element signature="e#952#2184#0" expanded="true" />
-            <element signature="e#2245#3005#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -651,13 +557,6 @@
             <element signature="e#0#20#0" expanded="true" />
             <element signature="e#706#951#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="50" lean-forward="true" selection-start-line="50" selection-end-line="50" />
         </state>
       </provider>
     </entry>
@@ -699,28 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_listview.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="45" column="27" selection-start-line="45" selection-start-column="27" selection-end-line="45" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#64#0" expanded="true" />
-            <element signature="e#6276#6333#0" expanded="true" />
-            <marker date="1569538486608" expanded="true" signature="4553:5278" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carro_dao.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="10" column="22" lean-forward="true" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
-          <folding>
-            <element signature="e#350#552#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_bloc.dart">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -738,27 +615,6 @@
           <caret line="73" column="17" selection-start-line="73" selection-start-column="17" selection-end-line="73" selection-end-column="17" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/carros/home_page.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="82" column="15" selection-start-line="82" selection-start-column="15" selection-end-line="82" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/lib/utils/sql/base_dao.dart">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#20#0" expanded="true" />
-            <element signature="e#381#577#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -805,34 +661,230 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/upload_api.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" selection-start-line="7" selection-end-line="7" selection-end-column="40" />
+          <folding>
+            <element signature="e#333#1359#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carro-form-page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="252" column="9" lean-forward="true" selection-start-line="252" selection-start-column="9" selection-end-line="252" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#4716#5498#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/login/firebase_service.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="48" column="4" selection-start-line="48" selection-start-column="4" selection-end-line="48" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#17#0" expanded="true" />
+            <element signature="e#4509#4872#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/lib/pages/carros/carro_page.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="70" column="21" selection-start-line="70" selection-start-column="21" selection-end-line="70" selection-end-column="21" />
+        <state relative-caret-position="216">
+          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
           <folding>
             <element signature="e#0#64#0" expanded="true" />
-            <element signature="e#2619#2947#0" expanded="true" />
-            <element signature="e#4010#4833#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/lib/main.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="28" column="9" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="166">
+          <caret line="15" column="18" lean-forward="true" selection-start-line="15" selection-start-column="18" selection-end-line="15" selection-end-column="18" />
           <folding>
             <element signature="e#0#61#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/lib/pages/login/login_page.dart">
+    <entry file="file://$USER_HOME$/Documents/flutter/.pub-cache/hosted/pub.dartlang.org/webview_flutter-0.3.14+1/lib/webview_flutter.dart">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="102" column="15" lean-forward="true" selection-start-line="102" selection-start-column="15" selection-end-line="102" selection-end-column="15" />
+        <state relative-caret-position="169">
+          <caret line="265" column="29" selection-start-line="265" selection-start-column="29" selection-end-line="265" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/sql/base_dao.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Documents/flutter/packages/flutter/lib/src/material/progress_indicator.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="418" column="21" selection-start-line="418" selection-start-column="21" selection-end-line="418" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/site_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="81" column="16" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#343#972#0" expanded="true" />
+            <element signature="e#666#1372#0" expanded="true" />
+            <element signature="e#999#1034#0" expanded="true" />
+            <element signature="e#1471#1476#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/login/login_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="22" column="11" lean-forward="true" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+            <element signature="e#1732#3433#0" expanded="true" />
+            <element signature="e#3639#6787#0" expanded="true" />
+            <element signature="e#9492#9502#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/drawer_list.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="35" column="4" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="43" />
+          <folding>
+            <element signature="e#0#58#0" expanded="true" />
+            <element signature="e#3761#3813#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/finger_print.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
+          <folding>
+            <element signature="e#108#231#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pubspec.yaml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="48" column="18" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/fake/esportivos.json.dart">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/fake/luxo.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2420" selection-start-column="2420" selection-end-column="2420" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/fake/esportivos.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/fake/classicos.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="2567" selection-start-column="2567" selection-end-column="2567" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carro_dao.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="10" column="22" selection-start-line="10" selection-start-column="22" selection-end-line="10" selection-end-column="22" />
+          <folding>
+            <element signature="e#350#552#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/utils/network.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="24" />
+          <folding>
+            <element signature="e#77#391#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/loripsum_api.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#20#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/home_page.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="562">
+          <caret line="108" column="3" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+            <element signature="e#1495#2589#0" expanded="true" />
+            <element signature="e#2878#2883#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_api.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="241" column="50" selection-start-line="241" selection-start-column="50" selection-end-line="241" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/search/carros_search.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+            <element signature="e#154#232#0" expanded="true" />
+            <element signature="e#403#498#0" expanded="true" />
+            <element signature="e#506#568#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/lib/pages/carros/carros_listview.dart">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="50" selection-start-line="10" selection-start-column="50" selection-end-line="10" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#64#0" expanded="true" />
+            <element signature="e#441#4322#0" expanded="true" />
+            <element signature="e#6276#6333#0" expanded="true" />
+            <marker date="1570397910087" expanded="true" signature="4576:5301" ph="..." />
           </folding>
         </state>
       </provider>

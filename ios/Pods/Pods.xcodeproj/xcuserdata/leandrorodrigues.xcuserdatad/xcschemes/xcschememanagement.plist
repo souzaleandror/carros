@@ -79,6 +79,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>FirebaseStorage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Flutter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -169,6 +174,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>firebase_storage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>gRPC-C++-gRPCCertificates-Cpp.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -204,6 +214,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>local_auth.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>location.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>nanopb.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -235,6 +255,11 @@
 			<false/>
 		</dict>
 		<key>video_player.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>webview_flutter.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

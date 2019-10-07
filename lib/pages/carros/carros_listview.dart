@@ -8,7 +8,7 @@ import 'package:share/share.dart';
 class CarrosListView extends StatelessWidget {
   List<Carro> carros;
 
-  CarrosListView(this.carros);
+  CarrosListView(this.carros, {bool search = false});
 
   @override
   Widget build(BuildContext context) {

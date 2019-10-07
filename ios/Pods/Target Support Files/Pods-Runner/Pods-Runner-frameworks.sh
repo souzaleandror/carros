@@ -174,6 +174,8 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/image_picker/image_picker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/local_auth/local_auth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/location/location.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/path_provider/path_provider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/share/share.framework"
@@ -181,6 +183,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/sqflite/sqflite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/url_launcher/url_launcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/video_player/video_player.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/webview_flutter/webview_flutter.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
@@ -196,6 +199,8 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/image_picker/image_picker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/local_auth/local_auth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/location/location.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/path_provider/path_provider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/share/share.framework"
@@ -203,6 +208,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/sqflite/sqflite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/url_launcher/url_launcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/video_player/video_player.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/webview_flutter/webview_flutter.framework"
 fi
 if [[ "$CONFIGURATION" == "Profile" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/BoringSSL-GRPC/openssl_grpc.framework"
@@ -218,6 +224,8 @@ if [[ "$CONFIGURATION" == "Profile" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/image_picker/image_picker.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/local_auth/local_auth.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/location/location.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/path_provider/path_provider.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/share/share.framework"
@@ -225,6 +233,7 @@ if [[ "$CONFIGURATION" == "Profile" ]]; then
   install_framework "${BUILT_PRODUCTS_DIR}/sqflite/sqflite.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/url_launcher/url_launcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/video_player/video_player.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/webview_flutter/webview_flutter.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait

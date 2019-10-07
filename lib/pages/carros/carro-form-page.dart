@@ -4,6 +4,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carros/pages/carros/carro.dart';
 import 'package:carros/pages/carros/carros_api.dart';
 import 'package:carros/pages/login/api_response.dart';
+import 'package:carros/pages/login/firebase_service.dart';
 import 'package:carros/utils/alert_dialog.dart';
 import 'package:carros/utils/event_bus.dart';
 import 'package:carros/utils/navigator.dart';
@@ -251,5 +252,9 @@ class _CarroFormPageState extends State<CarroFormPage> {
         this._file = file;
       });
     }
+
+    File fileCamera = await ImagePicker.pickImage(source: ImageSource.camera);
+
+    FirebaseService.uploadFirebaseStorage(fileCamera);
   }
 }

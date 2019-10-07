@@ -6,6 +6,9 @@ import 'package:carros/pages/carros/upload_api.dart';
 import 'package:carros/pages/login/api_response.dart';
 import 'package:carros/pages/login/usuario.dart';
 import 'package:carros/utils/http_helper.dart' as http;
+import 'package:carros/utils/network.dart';
+import 'package:connectivity/connectivity.dart';
+import 'package:flutter/services.dart';
 
 class TipoCarro {
   static final String classicos = "classicos";
@@ -14,6 +17,8 @@ class TipoCarro {
 }
 
 class CarrosApi {
+  static bool FAKE = true;
+
 //  static Future<List<Carro>> getCarros() async {
 //    final carros = List<Carro>();
 //
@@ -208,5 +213,37 @@ class CarrosApi {
       print(e);
       return ApiResponse.error(msg: "Nao foi possivel deletar o carro");
     }
+  }
+
+  static Future<List<Carro>> getCarrosByTipo(String tipo) async {
+    String json;
+
+    if (FAKE) {
+      json = await rootBundle.loadString("assets/fake/$tipo.json");
+    } else {
+      var connectivyResult = await isNetworkOn();
+
+      if (connectivyResult == ConnectivityResult.none) {
+        // get Banco de dados ou arquivo
+      } else {
+        //API
+      }
+
+      return null;
+    }
+  }
+
+  static search(String query) async {
+    List<Carro> carros = await getCarros("classiscos");
+
+    List<Carro> list = [];
+
+    for (Carro c in carros) {
+      if (c.nome.toUpperCase().contains(query.toUpperCase())) {
+        list.add(c);
+      }
+    }
+
+    return list;
   }
 }
